@@ -19,7 +19,7 @@ async function fetchExchangeRates() {
    // Replace 'YOUR_ACCESS_KEY' with your actual API key from exchangeratesapi.io
    const apiKey = process.env.apiKey;
    console.log(apiKey)
-   // The base of the API request is EUR then filter USD abd XPF
+   // The base of the API request is EUR then filter USD and XPF
    const apiUrl = `http://api.exchangeratesapi.io/v1/latest?access_key=${apiKey}&symbols=USD,XPF`;
    try {
       const response = await fetch(apiUrl);
