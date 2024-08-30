@@ -1,5 +1,5 @@
-# RESTAURANT TEAVAITI WEBSITE
+# SNACK TEAVAITI WEBSITE
 # DOMELIER
 # github : ar11tehau - edx : Ariitehau
 # Toulouse, FRANCE
-# 28/08/2024
+# 30/08/2024
