@@ -1,17 +1,20 @@
 "use strict"
 import express from "express"
+import fs from "fs"
 
 const app = express()
 
 // For the free update from exchangeratesapi base is EUR
 const rates = { eur: 1, usd : 1.10, xpf : 119.33}
 
+const menu = JSON.parse(fs.readFileSync('./data/menu.json', 'utf8'));
+
 app.use(express.static("public"))
 
 app.set('view engine', 'ejs')
 
 app.get("/", (req, res) => {
-   res.render("index", { rates })
+   res.render("index", { menu: menu.menu, rates })
 })
 
 // Function to fetch the latest exchange rates

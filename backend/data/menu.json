@@ -1,0 +1,67 @@
+{
+   "menu": [
+     {
+       "title": "Viandes",
+       "items": [
+         {"name": "Hamburger + Frites", "price": 950},
+         {"name": "Cheeseburger + Frites", "price": 1050},
+         {"name": "Steack + Frites", "price": 1300},
+         {"name": "Steack + Frites + Roquefort", "price": 1400},
+         {"name": "Poulet + Frites", "price": 800},
+         {"name": "Poulet + Frites + Roquefort", "price": 900},
+         {"name": "Poulet aux légumes", "price": 1300},
+         {"name": "Poulet Croustillant", "price": 1300},
+         {"name": "Chao men", "price": 1200},
+         {"name": "Salade de Poulet + Yaourt", "price": 1200}
+       ]
+     },
+     {
+       "title": "Poissons",
+       "items": [
+         {"name": "Fish Burger + Frites", "price": 1100},
+         {"name": "Poisson frit + Frites", "price": 1300},
+         {"name": "Poisson cru au lait de coco", "price": 1300},
+         {"name": "Poisson cru Chinois", "price": 1300},
+         {"name": "Sashimi", "price": 1200},
+         {"name": "Crevettes au curry", "price": 1400},
+         {"name": "Salade de thon + Yaourt", "price": 1200}
+       ]
+     },
+     {
+       "title": "Sauces",
+       "items": [
+         {"name": "Barbecue", "price": 300},
+         {"name": "Roquefort", "price": 350}
+       ]
+     },
+     {
+       "title": "Accompagnement",
+       "prices": "multi",
+       "items": [
+         {"name": "Barquettes de riz", "small": 400, "big": 500},
+         {"name": "Portion de frites", "small": 400, "big": 500}
+       ]
+     },
+     {
+       "title": "Desserts",
+       "items": [
+         {"name": "Gauffre chocolat chantilly", "price": 400},
+         {"name": "Gâteau qui pleure", "price": 500},
+         {"name": "Eclair/Tartelette/Chou", "price": 250},
+         {"name": "Forêt noire", "price": 350},
+         {"name": "Mimosat", "price": 300}
+       ]
+     },
+     {
+       "title": "Boissons",
+       "prices": "multi",
+       "items": [
+         {"name": "Tahitian Cola",  "small": 250, "big": 700},
+         {"name": "Tahitian Lime", "small": 250, "big": 700},
+         {"name": "Tahitian Orange", "small": 250, "big": 700},
+         {"name": "Tahitian Red", "small": 250, "big": 700},
+         {"name": "Eau", "price": 700}
+       ]
+     }
+   ]
+}

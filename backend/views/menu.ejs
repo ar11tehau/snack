@@ -1,0 +1,29 @@
+<section id="menu" class="flex flex-wrap justify-around">
+   <!-- Example category -->
+   <% menu.forEach(category => { %>
+      <div class="w-full sm:w-1/2 md:max-w-md p-3 pt-0">
+         <h2 class="text-xl font-bold sm:text-3xl lg:text-4xl"><%= category.title %></h2>
+         <% if (category.prices) { %>
+            <div class="flex">
+               <span class="w-6/12"></span>
+               <span class="w-3/12 text-right">Petit</span>
+               <span class="w-3/12 text-right">Grand</span>
+            </div>
+         <% } %>
+         <% category.items.forEach(item => { %>
+            <% if (item.price) { %>
+               <div class="flex">
+                  <span class="w-9/12"><%= item.name %></span>
+                  <span class="w-3/12 text-right price"><%= item.price %> fr</span>
+               </div>
+            <% } else { %>
+               <div class="flex">
+                  <span class="w-6/12"><%= item.name %></span>
+                  <span class="w-3/12 text-right price"><%= item.small %> fr</span>
+                  <span class="w-3/12 text-right price"><%= item.big %> fr</span>
+               </div>
+            <% } %>
+         <% }) %>
+      </div>
+   <% }) %>
+</section>
