@@ -1,0 +1,4 @@
+node_modules
+ecosystem.config.cjs
+tailwind.config.js
+src
