@@ -1,0 +1,44 @@
+name: Déploiement
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 5 * * *" # chaque jour à 5 h UTC, pour rafraîchir le taux USD
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Envoi sur le serveur
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key && chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # La clé est bridée côté serveur par rrsync sur /var/www/snackteavaiti.com
+          rsync -a --delete -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" dist/ arii@domelier.fr:./
